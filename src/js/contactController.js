@@ -7,8 +7,8 @@ $.ajax({
     dataType: 'json'
 }).then(function(data){
 	console.log(data)
-// data.results.map(addUserToPage)	
-
+	let photo = data.results [0].picture.large
+// data.results.map(addDataToHTML)	
 });
 
 
@@ -22,12 +22,12 @@ class ContactController {
 
 
 
-	addContact (firstname,lastname,telephone,city,state) {
+	addContact (firstname,lastname,telephone,city,state,photo) {
 	    // let id   = _.random(100, 999);
 	    let person = new Person(firstname,lastname,telephone,city,state);
-	    let contactHTML = this.contactTemplate(person);
+	    let contactHTML = this.contactTemplate(person,photo);
 	    $(".allTheContactsBox").append(contactHTML);
-	    this.addressBook.person.push(contacts);
+	    // this.addressBook.person.push(contacts);
 	  }
 
 
@@ -51,7 +51,7 @@ class ContactController {
 	  	return ` 
           <div class="contactsBox">
             <div class= "pic2">
-              <img src="${data.picture.large}" width="100%" height=100%>
+              <img src="#" width="100%" height=100%>
             </div> 
               <div class="contactsWrapper">
                 <span class="firstname2">${anycontact.first}</span>
@@ -78,12 +78,8 @@ class ContactController {
 
   // }
 
-
-
-
-
 };
 
-
+ // <img src="${data.picture.large}" width="100%" height=100%>
 
 export { ContactController };

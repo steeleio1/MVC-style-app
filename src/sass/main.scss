@@ -8,7 +8,7 @@
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 5px;
-	background: rgba(242, 242, 242, 0.7);
+	background: rgba(242, 242, 242, 0.5);
 }
 
 .formBox {
@@ -65,37 +65,27 @@ hr {
 	// border: solid orange 1px;
 	display: flex;
 	flex-direction: column;
-	// height: 20vh;
 	align-items: center;
-	// width: 20vw;
 }
 
 .pic1 {
-	border: solid yellow 1px;
+	// border: solid yellow 1px;
 	height: 20vw;
 	width: 20vw;
-	border-radius: 100%;
+	// border-radius: 100%;
+	-webkit-box-shadow: inset 0px 0px 4px 0px rgba(50, 50, 50, 0.45);
+	-moz-box-shadow:    inset 0px 0px 4px 0px rgba(50, 50, 50, 0.45);
+	box-shadow:         inset 0px 0px 4px 0px rgba(50, 50, 50, 0.45);
 }
 
 .pic2 {
-	border: solid yellow 1px;
+	// border: solid yellow 1px;
 	height: 10vw;
 	width: 10vw;
+	-webkit-box-shadow: inset 0px 0px 4px 0px rgba(50, 50, 50, 0.45);
+	-moz-box-shadow:    inset 0px 0px 4px 0px rgba(50, 50, 50, 0.45);
+	box-shadow:         inset 0px 0px 4px 0px rgba(50, 50, 50, 0.45);
 }
-
-// input {
-// 	border: solid rgba(194, 194, 194, 0.33) 1px;
-// 	height: 5vh;
-// 	width: 30vw;
-//  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
-//   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
-//   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset; 
-   
-//   transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
-//   -webkit-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
-//   -moz-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
-//   -o-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
-// }
 
 
 input {
