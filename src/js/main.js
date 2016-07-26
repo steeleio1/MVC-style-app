@@ -14,6 +14,6 @@ let addressBook = new AddressBook();
 
 
 
-let app = new ContactController(importForm,addressBook,contactsContainer);
+let app = new ContactController(importForm,contactsContainer,addressBook);
 
 app.formSubmit();

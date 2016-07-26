@@ -2,15 +2,6 @@ import $ from "jquery";
 import _ from 'lodash';
 import {Person} from "./person";
 
-$.ajax({
-	url:"https://randomuser.me/api/?results=12",
-    dataType: 'json'
-}).then(function(data){
-	console.log(data)
-	let photo = data.results [0].picture.large
-// data.results.map(addDataToHTML)	
-});
-
 
 class ContactController {
 
@@ -23,10 +14,12 @@ class ContactController {
 
 
 	addContact (firstname,lastname,telephone,city,state,photo) {
+		let person = new Person(firstname,lastname,telephone,city,state, photo);
+		let contactHTML = this.contactTemplate(person);
+		$(".allTheContactsBox").append(contactHTML);
+
 	    // let id   = _.random(100, 999);
-	    let person = new Person(firstname,lastname,telephone,city,state);
-	    let contactHTML = this.contactTemplate(person,photo);
-	    $(".allTheContactsBox").append(contactHTML);
+	
 	    // this.addressBook.person.push(contacts);
 	  }
 
@@ -41,8 +34,19 @@ class ContactController {
 	      let tele = this.theForm.find(".telephone1").val();
 	      let city = this.theForm.find(".city1").val();
 	      let state = this.theForm.find(".state1").val();
+	      console.log(this); // a ContactsController instance
+
+	      $.ajax({
+			url:"https://randomuser.me/api/?results=12",
+		    dataType: 'json'
+		  }).then((data) => {
+		  	// console.log(this); // ??? Window? jQuery prototype?
+		  	let photo = data.results[0].picture.large;
+		    this.addContact(firstname,lastname,tele,city,state,photo);
+		  });
+
+
           // console.log(firstname)
-	      this.addContact(firstname,lastname,tele,city,state);
 
 	    });
 	  }
@@ -51,7 +55,7 @@ class ContactController {
 	  	return ` 
           <div class="contactsBox">
             <div class= "pic2">
-              <img src="#" width="100%" height=100%>
+              <img src="${anycontact.photo}" width="100%" height=100%>
             </div> 
               <div class="contactsWrapper">
                 <span class="firstname2">${anycontact.first}</span>
